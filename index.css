@@ -20,6 +20,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  
 }
       
 li {float: left;}
@@ -62,4 +63,8 @@ footer {
   padding: 3px;
   background-color: black;
   color: white;
+}
+
+.logo{
+  padding-left: 10px;
 }
