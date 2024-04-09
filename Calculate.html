@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="pics/avocado.png">
+    <link rel="stylesheet" href="Calculate.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Calories</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li style="padding-left: 28% ;color: #248f24;"><h3>YourNutritionist</h3></li>
+        <li style="float:right"><a class="active" href="register.html">Sign in/Register</a></li>
+    </ul>
+    <br>    
+    
+    <form id="calculationForm" method="post" action="http://localhost:3000" >
+        <div class="container">
+          <h1>Calculate your Daily Calories.</h1>
+          <hr>
+      
+          <label for="weight"><b>Weight</b></label>
+          <input type="text" placeholder="Enter Weight in Kg" name="weightData" id="weight" required>
+      
+          <label for="height"><b>Height</b></label>
+          <input type="text" placeholder="Enter height in Cm" name="heightData" id="height" required>
+
+          <label for="Age"><b>Age</b></label>
+          <input type="text" placeholder="Enter your Age" name="AgeData" id="Age" required>
+
+          <hr>      
+          <button type="submit" class="registerbtn">Calculate My Calories</button>
+        </div>
+      </form>
+</body>
+</html>
