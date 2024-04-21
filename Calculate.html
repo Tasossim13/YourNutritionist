@@ -24,20 +24,22 @@
           <hr>
       
           <label for="weight"><b>Weight</b></label>
-          <input type="text" placeholder="Enter Weight in Kg" name="weightData" id="weight" required>
+          <input type="number" placeholder="Enter Weight in Kg" name="weightData" id="weight" required>
       
           <label for="height"><b>Height</b></label>
-          <input type="text" placeholder="Enter height in Cm" name="heightData" id="height" required>
+          <input type="number" placeholder="Enter height in Cm" name="heightData" id="height" required>
 
-          <label for="Age"><b>Age</b></label>
-          <input type="text" placeholder="Enter your Age" name="AgeData" id="Age" required>
+          <label for="age"><b>Age</b></label>
+          <input type="number" placeholder="Enter your Age" name="ageData" id="age" required>
+          
 
           <p>Please select your Gender:</p>
-          <input type="radio" id="maleId" name="maleName" value="male">
-          <label for="maleId">Male</label><br>
+        <input type="radio" id="maleId" name="gender" value="male">
+        <label for="maleId">Male</label><br>
 
-          <input type="radio" id="female" name="femaleName" value="female>
-          <label for="female>Female</label><br>
+        <input type="radio" id="femaleId" name="gender" value="female">
+        <label for="femaleId">Female</label><br>
+
 
           <hr>      
           <button type="submit" class="registerbtn">Calculate My Calories</button>

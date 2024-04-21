@@ -11,11 +11,12 @@ app.use(bodyParser.json());
 
 // Δημιουργία POST endpoint
 app.post('/save-name', (req, res) => {
-    const { weight, height, age } = req.body;
+    const { weight, height, ageData, gender } = req.body;
 
     console.log('Weight:', weight);
     console.log('Height:', height);
-    console.log('Age:', age);    
+    console.log('Age:', ageData);    
+    console.log('Gender:', gender);
 
   // Επιστροφή απόκρισης
   res.status(200).json({message: 'Data received'});
