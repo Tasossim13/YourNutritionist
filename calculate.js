@@ -1,13 +1,12 @@
-function setValueCalories(){
-    let weight = document.getElementById(weight);
-    console.log(weight);
-    
-    let height = document.getElementById(height);
-    console.log(height);
-    
-    let age = document.getElementById(Age);
-    console.log(age);
+function showInput() {
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const age = document.getElementById('age').value;
 
-    alert("All received")
-};
+    const userInputElement = document.getElementById('userInput');
+    userInputElement.innerHTML = `<p>Weight: ${weight}</p><p>Height: ${height}</p><p>Age: ${age}</p>`;
+    console.log("All values ok");
 
+    return false;
+    //thelei veltiwsi
+}

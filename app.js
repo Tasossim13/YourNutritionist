@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     function handleFormSubmit(event) {
         event.preventDefault();
 
@@ -22,4 +22,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('calculationForm').addEventListener('submit', handleFormSubmit);
 });
-//ToDo fix submit form and value parsing
+//ToDo fix submit form and value parsing*/

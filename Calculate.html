@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="app.js"></script>
+    <script src="calculate.js"></script>
     <link rel="icon" type="image/x-icon" href="pics/avocado.png">
     <link rel="stylesheet" href="Calculate.css">
     <meta charset="UTF-8">
@@ -17,18 +17,18 @@
     </ul>
     <br>    
     
-    <form id="calculationForm" method="post" action="http://localhost:3000" >
+    <form id="calculationForm">
         <div class="container">
           <h1>Calculate your Daily Calories.</h1>
           <hr>
       
-          <label for="weight"><b>Weight</b></label>
+          <label for="weight"><b>Weight:</b></label>
           <input type="number" placeholder="Enter Weight in Kg" name="weightData" id="weight" required>
       
-          <label for="height"><b>Height</b></label>
+          <label for="height"><b>Height:</b></label>
           <input type="number" placeholder="Enter height in Cm" name="heightData" id="height" required>
 
-          <label for="age"><b>Age</b></label>
+          <label for="age"><b>Age:</b></label>
           <input type="number" placeholder="Enter your Age" name="ageData" id="age" required>
           
 
@@ -39,13 +39,14 @@
         <input type="radio" id="femaleId" name="gender" value="female">
         <label for="femaleId">Female</label><br>
 
-
-          <hr>      
-          <button type="submit" class="registerbtn">Calculate My Calories</button>
+        <hr>      
+        <button onclick="showInput()" class="registerbtn">Calculate My Calories</button>
         </div>
       </form>
 
       <img src="pics/nutrition.jpg" >
+
+      <div id="userInput"></div>
 
   <footer>
   <p>YourNutritionist 2024® <br></p>
