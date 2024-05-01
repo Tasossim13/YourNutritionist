@@ -2,6 +2,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
     "mongodb": "^6.5.0"
+=======
+    "mongoose": "^8.3.2"
+>>>>>>> c570b5d1acfa1cf55ac8652bd01484eed0d77248
   }
 }
