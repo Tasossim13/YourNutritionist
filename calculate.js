@@ -31,4 +31,8 @@ function calculateDailyCalories(gender, weight,height,age){
         BMR = (10*weight) + (6.25*height) - (5*age) -161;
     }
     return BMR; //leitoyrgei mia xara
+    //algorithmos gia metrisi
+    /*Ο τύπος του Mifflin-St Jeor είναι ο εξής:
+Για άντρες: BMR = (10 × βάρος σε κιλά) + (6.25 × ύψος σε εκατοστά) - (5 × ηλικία σε έτη) + 5
+Για γυναίκες: BMR = (10 × βάρος σε κιλά) + (6.25 × ύψος σε εκατοστά) - (5 × ηλικία σε έτη) - 161*/
 }
