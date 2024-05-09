@@ -108,11 +108,8 @@ figcaption{
 }
 
 .nutri-quote{
-  text-align: center;
-  color: #111;
+  width: auto;
   border-style: inset;
   border-top-color: #248f24;
   border-left-color: #248f24;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
