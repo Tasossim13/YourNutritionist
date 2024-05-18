@@ -1,3 +1,5 @@
+@import url("responsive.css");
+
 body {
     background-color: white;
     color: aliceblue;
@@ -34,7 +36,7 @@ ul {
   }
         
         li a:hover:not(.active) {
-          background-color: #111;
+          background-color: #248f24;
         }
         
   .active {

@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
     <script src="calculate.js"></script>
+    <script src="menu.js"></script>
     <link rel="icon" type="image/x-icon" href="pics/avocado.png">
     <link rel="stylesheet" href="Calculate.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate Calories | YourNutritionist</title>
 </head>
-<body>
-    <ul>
-      <li><img class="logo" src="pics/avocado.png"></li>
-      <li><a href="index.html">Home</a></li>
+<body> 
+<div class="topnav" id="myTopnav">
+  <ul class="nav-links">
+      <li><a class="active2" href="index.html">Home</a></li>
       <li><a href="aboutUs.html">About Us</a></li>
       <li><a href="Calculate.html">Calculate Calories</a></li>
       <li style="float:right"><a class="active" href="register.html">Sign in/Register</a></li>
-    </ul>
+      <li class="icon">
+      <a onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+  </a>
+  </li>
+  </ul>
+</div>
     <br>    
     
     <form id="calculationForm">
@@ -47,7 +55,7 @@
       </form>
 
       <img class="logo2" src="pics/logo.png" >
-//na ftiaksw to mobile css
+
       
 
   <footer>
