@@ -5,9 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         const recipeList = document.getElementById('recipe-list');
         data.forEach(recipe => {
-          const li = document.createElement('li');
-          li.textContent = `${recipe.name} - ${recipe.nutrition.calories} calories`;
-          recipeList.appendChild(li);
+          const th = document.createElement('th');
+          th.innerHTML= `<strong>${recipe.name}</strong> - ${recipe.nutrition.calories} Calories`;
+          recipeList.appendChild(th);
+          const th2 = document.createElement('tr');
+          th2.innerHTML= `<strong>Ingredients: </strong>`;
+          recipeList.appendChild(th2);
+          recipe.ingredients.forEach(ingredient => {
+            const ingredientItem = document.createElement('tr');
+            ingredientItem.textContent = ingredient;
+            recipeList.appendChild(ingredientItem);
+        });
+            const instructions =  document.createElement('tr');
+            instructions.innerHTML = `<strong>Instructions:</strong> ${recipe.instructions} `
+            recipeList.appendChild(instructions);
         });
       })
       .catch(error => console.error('Error fetching recipes:', error));
