@@ -1,8 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(cors()); // Χρήση του cors middleware
+app.use(express.static('public'));
 
 mongoose.connect('mongodb://localhost:27017/yourNutritionistDataB');
 

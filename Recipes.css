@@ -5,13 +5,23 @@ body {
     color: aliceblue;
 }
 
-ul {
+h1{
+  color:#333
+}
+
+ul:not(#recipe-list) {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
     
+  }
+
+  #recipe-list{
+    color: #248f24;
+    font-size: larger;
+    display: block;
   }
 
   .logo{
