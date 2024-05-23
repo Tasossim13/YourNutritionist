@@ -25,8 +25,29 @@
         </ul>
     </div>
 <br>
+<form id="RecipeForm">
+    <div class="container">
+      <img src="pics/avocado.png" >
+      <h1 id="recipeFormText">Choose Ingredients you like and we will show you Recipes including them.</h1>
+      <hr>
+  
+      <label for="weight"><b>Ingredient 1:</b></label>
+      <input type="number" placeholder="Enter 1:" name="ingredient1" id="ingr1" required>
+  
+      <label for="height"><b>Ingredient 2:</b></label>
+      <input type="number" placeholder="Enter 2:" name="ingredient2" id="ingr2" required>
+
+      <label for="age"><b>Ingredient 3:</b></label>
+      <input type="number" placeholder="3:" name="ingredient3" id="ingr3" required>
+    <hr> 
+
+    <button onclick="return showInput()" class="registerbtn">Find me Recipes</button>
+    </div>
+  </form>
+<br>
 
 <h1>Recipes</h1>
+<hr>
 <ul id="recipe-list"></ul>
 <br>
 <footer>

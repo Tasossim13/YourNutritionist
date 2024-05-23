@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const recipeList = document.getElementById('recipe-list');
         data.forEach(recipe => {
           const th = document.createElement('th');
-          th.innerHTML= `<strong>${recipe.name}</strong> - ${recipe.nutrition.calories} Calories`;
+          th.innerHTML= `<u><strong>${recipe.name}</strong> - ${recipe.nutrition.calories} Calories</u>`;
           recipeList.appendChild(th);
           const th2 = document.createElement('tr');
           th2.innerHTML= `<strong>Ingredients: </strong>`;
@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const instructions =  document.createElement('tr');
             instructions.innerHTML = `<strong>Instructions:</strong> ${recipe.instructions} `
             recipeList.appendChild(instructions);
+            const breakP =  document.createElement('br');
+            breakP.innerHTML = `<br><br>`
+            recipeList.appendChild(breakP);
         });
       })
       .catch(error => console.error('Error fetching recipes:', error));

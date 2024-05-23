@@ -5,8 +5,9 @@ body {
     color: aliceblue;
 }
 
-h1{
-  color:#333
+h1:not(#recipeFormText){
+  color:#333;
+  text-align: center;
 }
 
 ul:not(#recipe-list) {
@@ -23,6 +24,7 @@ ul:not(#recipe-list) {
     font-size: larger;
     display: block;
   }
+
 
   .logo{
     padding-left: 10px;
@@ -94,3 +96,56 @@ footer{
 }
 } 
 */
+
+.container {
+  box-sizing: border-box;
+  margin: auto;
+  width: 75%;
+  padding: 12px;
+  background-color: #333;
+}
+
+.container > img {
+  width: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Full-width input fields */
+input[type=number]{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: beige;
+}
+
+input[type=number]:focus{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ddd;
+  outline: none;
+}
+
+  /* Set a style for the submit button */
+  .registerbtn {
+      box-sizing: border-box;
+      width: 95%;
+      background-color: #248f24;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .registerbtn:hover {
+      box-sizing: border-box;
+      width: 100%;
+      opacity: 1;
+    }
