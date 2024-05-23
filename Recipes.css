@@ -10,6 +10,10 @@ h1:not(#recipeFormText){
   text-align: center;
 }
 
+#recipeFormText{
+  text-align: center;
+}
+
 ul:not(#recipe-list) {
     list-style-type: none;
     margin: 0;
@@ -113,7 +117,7 @@ footer{
 }
 
 /* Full-width input fields */
-input[type=number]{
+select{
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
@@ -123,7 +127,7 @@ input[type=number]{
   background: beige;
 }
 
-input[type=number]:focus{
+select:focus{
   box-sizing: border-box;
   width: 100%;
   background-color: #ddd;
