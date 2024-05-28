@@ -1,0 +1,84 @@
+@import url("responsive.css");
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+  }
+        
+  li {float: left;}
+        
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: larger;
+  }
+        
+        li a:hover:not(.active) {
+          background-color: #248f24;
+        }
+        
+  .active {
+    background-color: #248f24;
+    color: white;
+  }
+
+  label{
+    color: aliceblue;
+  }
+
+  .container {
+    box-sizing: border-box;
+    margin: auto;
+    width: 75%;
+    padding: 16px;
+    background-color: #333;
+  }
+  
+  /* Full-width input fields */
+  input[type=number],select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: beige;
+  }
+
+  input[type=radio]{
+    display: inline-block;
+  }
+  
+  input[type=number]:focus, select:focus {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ddd;
+    outline: none;
+  }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+        box-sizing: border-box;
+        width: 95%;
+        background-color: #248f24;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+      .registerbtn:hover {
+        box-sizing: border-box;
+        width: 100%;
+        opacity: 1;
+      }
