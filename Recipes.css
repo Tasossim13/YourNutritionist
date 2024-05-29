@@ -10,6 +10,30 @@ h1:not(#recipeFormText){
   text-align: center;
 }
 
+.recipe-container {
+  border: 2px solid #000;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+.recipe-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.recipe-ingredients {
+  margin-left: 20px;
+}
+
+.recipe-ingredients li{
+  margin-bottom: 15px;
+  background-color: #ddd;
+}
+
+.recipe-instructions {
+  margin-top: 10px;
+}
+
 #recipeFormText{
   text-align: center;
 }
