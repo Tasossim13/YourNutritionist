@@ -3,11 +3,17 @@
 body {
     background-color: white;
     color: aliceblue;
+    background-image: url('pics/fruitGreen.jpg');
+    background-size: cover;
 }
 
 h1:not(#recipeFormText){
   color:#333;
   text-align: center;
+}
+
+.recipeForm{
+  opacity: 0.9;
 }
 
 .recipe-container {
@@ -16,8 +22,10 @@ h1:not(#recipeFormText){
   margin-bottom: 20px;
   border-radius: 10px;
   background-color: #f9f9f9;
+  opacity: 0.9;
 }
 .recipe-title {
+  text-align: center;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
