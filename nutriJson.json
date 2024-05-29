@@ -22,5 +22,26 @@
   }
 }
 
+{
+  "name": "Chicken Breast With Potato",
+  "ingredients": ["1 Chicken Breast", "2 Potato","1 teaspoon Oil"],
+  "instructions": "Combine all ingredients into a casserole and Cook for 1h at 200℃.",
+  "nutrition": {
+    "calories": 1152,
+    "protein": 25,
+    "fat": 60,
+    "carbohydrates": 101
+  }
+}
 
-
+{
+  "name": "Banana Oatmeal Pancakes ",
+  "ingredients": ["1 greek yogurt", "1 Egg","1 Milk 2%","1 Spoon Butter","1 Spoon Brown Sugar","1 Vanilla","1 Baking Powder"],
+  "instructions": "Place the oats, Greek yogurt, eggs, milk, melted butter, brown sugar, vanilla, baking powder and kosher salt in a blender. Blend on high until a smooth batter forms. Mash the bananas, then stir them into the blender with a spatula.Then Cook!",
+  "nutrition": {
+    "calories": 1313,
+    "protein": 45,
+    "fat": 36,
+    "carbohydrates": 171
+  }
+}
