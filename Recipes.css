@@ -4,7 +4,9 @@ body {
     background-color: white;
     color: aliceblue;
     background-image: url('pics/fruitGreen.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 h1:not(#recipeFormText){
