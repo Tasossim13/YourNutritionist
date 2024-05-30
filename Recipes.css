@@ -9,6 +9,10 @@ body {
 
 }
 
+ul > li {
+  font-size:calc(0.9vw + 0.9vh);
+}
+
 h1:not(#recipeFormText){
   color:#333;
   text-align: center;

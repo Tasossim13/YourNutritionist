@@ -17,6 +17,10 @@ img{display: block;
   transition: 0.3s ease;
 }
 
+ul > li {
+  font-size:calc(0.9vw + 0.9vh);
+}
+
 .zoom{
   width: 45%;
   transition: 0.3s ease;

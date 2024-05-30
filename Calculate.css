@@ -9,6 +9,10 @@ p{
   color: #111;
 }
 
+ul > li {
+  font-size:calc(0.9vw + 0.9vh);
+}
+
 .logo{
   padding-left: 10px;
   width: 50px;
