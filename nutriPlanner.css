@@ -108,3 +108,43 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
+
+.meal-plan-container {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.meal-plan {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meal-plan th, .meal-plan td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.meal-plan th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.meal-plan td {
+  background-color: #fff;
+}
+
+.meal-plan tbody tr:nth-child(odd) td {
+  background-color: #f9f9f9;
+}
+
+.container > h2{
+  color:#f9f9f9;
+  text-align: center;
+}
