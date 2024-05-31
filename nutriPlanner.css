@@ -1,7 +1,6 @@
 @import url("responsive.css");
 
 body{
-    background-image: url('pics/background.jpg');
     background-repeat: no-repeat;
     width: 100vw;
 }
