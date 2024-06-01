@@ -4,6 +4,7 @@ function storeInput() {
     const heightChoice = document.getElementById('height').value;
     const ageChoice = document.getElementById('age').value;
     const genderChoice = document.getElementById('genderId').value;
+    const exerciseChoice = document.getElementById('exerciseId').value;
 
     const userInputElement = document.getElementById('user1');
     let formData = {
@@ -11,46 +12,70 @@ function storeInput() {
         height: heightChoice,
         age: ageChoice,
         choice: usersChoice,
-        gender:genderChoice
+        gender:genderChoice,
+        exercise: exerciseChoice
      };
     userInputElement.innerHTML = `<p>You choose ${formData.weight} and ${formData.choice}</p>`
-    //proteinCalc(formData.weight,formData.choice);
-      calculateDailyFatIntake(formData.weight,formData.gender,formData.height,formData.age,formData.choice);
+    //proteinCalc(formData.weight,formData.choice,formData.exercise);
+    //calculateDailyFatIntake(formData.weight,formData.gender,formData.height,formData.age,formData.choice);
     return false;
 }
 
-function proteinCalc(weight, choice){//calculates protein intake based on each cutting , or bulking or maintaining weight
-    let value=weight;
-    if(choice=="lose"){
-        value = value*1.4;
-    }else if(choice=="gain"){
-        value = value*1.8;
-    }else{
-        value = value*1.1;
+function proteinCalc(weight, choice, exercise){//calculates protein daily intake based on exercise frequency ,or just in weight if exercise is not so often
+    let Choicevalue=weight;
+    let exerciseValue=weight;
+
+    if(exercise=="sometimes"){
+        exerciseValue= exerciseValue*1.3; 
+    }else if(exercise=="often"){
+        exerciseValue= exerciseValue*1.6; 
+    }else if(exercise=="everyDay"){
+        exerciseValue= exerciseValue*1.9; 
     }
-    console.log("you must take "+ value+"Protein Based on your goal");
+
+    if(choice=="lose"){
+        Choicevalue = Choicevalue*1.4;
+    }else if(choice=="gain"){
+        Choicevalue = Choicevalue*1.8;
+    }else{
+        Choicevalue = Choicevalue*1.1;
+    }
+
+    Choicevalue = parseInt(Choicevalue);
+    exerciseValue = parseInt(exerciseValue);
+
+    if(exerciseValue==weight){
+        console.log("you must take "+ parseInt(Choicevalue)+"g of Protein Based on your goal")
+    }else{
+        console.log("you must take "+ parseInt(exerciseValue)+"g of Protein Based on your activity");
+    }
     return false;
 }
 
-function calculateDailyFatIntake(weight,gender,height,age,goal) {//thelei douleia
-    const calories = calculateDailyCalories(weight,gender,height,age);
-    let fatPercentage;
+function calculateDailyFatIntake(weight,gender,height,age,goal) {//calculates daily fat intake based on bmr and all the other values
+    const calories = calculateDailyCalories(gender,weight,height,age);
+    console.log(calories)
+    let minFat;
+    let maxFat;
 
     if (goal == 'lose') {
-        fatPercentage = [0.20, 0.35];
+        minFat = 0.20;
+        maxFat=0.35;
     } else if (goal == 'gain') {
-        fatPercentage = [0.25, 0.35];
+        minFat=0.25;
+        maxFat=0.35;
     } else if (goal == 'maintain') {
-        fatPercentage = [0.20, 0.35];
+        minFat=0.20;
+        maxFat=0.35;
     } else {
-        console.error('Invalid goal selected');
+        console.error("Error");
         return;
     }
 
-    const minFatIntake = (calories * fatPercentage[0]) / 9;
-    const maxFatIntake = (calories * fatPercentage[1]) / 9;
+    const minFatIntake = (calories * minFat) / 9;
+    const maxFatIntake = (calories * maxFat) / 9;
     const average = ((minFatIntake+maxFatIntake)/2);
-    console.error(average);
+    console.log("You must take: "+parseInt(average)+"g of fat daily.");
     return false;
 }
 
