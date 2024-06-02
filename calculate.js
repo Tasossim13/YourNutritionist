@@ -16,7 +16,7 @@ function showInput() {
 
     const userInputElement = document.getElementById('userInput');
     if(gender=="male" || gender=="female"){
-        userInputElement.innerHTML = `<h3>You Should Eat ${calculateDailyCalories(gender,weight,height,age, exercise)} Calories Per Day! </h3><h4>Weight: ${weight}</h4><h4>Height: ${height}</h4><h4>Age: ${age}</h4>`;
+        userInputElement.innerHTML = `<h3>You Should Eat ${calculateDailyCalories(gender,weight,height,age, exercise)} Calories Per Day!</h3>`;
     }else{
         userInputElement.innerHTML = `<h3>Gender Is Not Specified! </h3>`;
     }

@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 instructions.innerHTML = `<strong>Instructions:</strong> ${recipe.instructions}`;
                 recipeContainer.appendChild(instructions);
 
+                const nutrition = document.createElement('div');
+                instructions.classList.add('recipe-nutrition');
+                instructions.innerHTML = `<strong>Protein:</strong> ${recipe.nutrition.protein} | <strong>Fat:</strong> ${recipe.nutrition.fat} | <strong>Carbohydrates:</strong> ${recipe.nutrition.carbohydrates}`;
+                recipeContainer.appendChild(instructions);
+
                 recipeList.appendChild(recipeContainer);
             });
         })
