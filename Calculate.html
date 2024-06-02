@@ -42,6 +42,15 @@
           <label for="age"><b>Age:</b></label>
           <input type="number" placeholder="Enter your Age:" name="ageData" id="age" required>
           
+          <label for="exercise">How often do you exercise?</label>
+          <select id="exerciseId" name="exercise" required>
+              <option value="" disabled selected>Select exercise frequency:</option>
+              <option value="never">Never(0-1 days a week)</option>
+              <option value="rarely">Rarely(1-2 days a week)</option>
+              <option value="sometimes">Sometimes(3-4 days a week)</option>
+              <option value="often">Often(5-6 days a week)</option>
+              <option value="everyDay">Every Day(7 days a week)</option>
+          </select>
 
           <h3>Please select your Gender:</h3>
         <input type="radio" id="maleId" name="gender" value="male">
