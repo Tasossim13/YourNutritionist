@@ -63,9 +63,9 @@ function calculateDailyFatIntake(weight,gender,height,age,goal) {//calculates da
         maxFat=0.35;
     } else if (goal == 'gain') {
         minFat=0.25;
-        maxFat=0.35;
+        maxFat=0.40;
     } else if (goal == 'maintain') {
-        minFat=0.20;
+        minFat=0.25;
         maxFat=0.35;
     } else {
         console.error("Error");
