@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Script loaded');
     fetch('http://localhost:3001/recipes')
         .then(response => response.json())
-        .then(data => {
+        .then(data => { //fetch recipes
             const recipeList = document.getElementById('recipe-list');
             data.forEach(recipe => {
                 const recipeContainer = document.createElement('div');

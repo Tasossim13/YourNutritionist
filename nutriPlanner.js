@@ -1,5 +1,5 @@
 function storeInput() {
-    const weightChoice = document.getElementById('weight').value;
+    const weightChoice = document.getElementById('weight').value; 
     const usersChoice = document.getElementById('choiceId').value; //contains user's choice (lose weight, gain weight etc)
     const heightChoice = document.getElementById('height').value;
     const ageChoice = document.getElementById('age').value;
@@ -45,9 +45,9 @@ function proteinCalc(weight, choice, exercise){//calculates protein daily intake
     exerciseValue = parseInt(exerciseValue);
 
     if(exerciseValue==weight){
-        console.log("you must take "+ parseInt(Choicevalue)+"g of Protein Based on your goal")
+        console.log("you must take "+ parseInt(Choicevalue)+"g of Protein Based on your goal") //returns this in case activity isnt often
     }else{
-        console.log("you must take "+ parseInt(exerciseValue)+"g of Protein Based on your activity");
+        console.log("you must take "+ parseInt(exerciseValue)+"g of Protein Based on your activity"); // returns this in case the users activity is often
     }
     return false;
 }
@@ -79,7 +79,7 @@ function calculateDailyFatIntake(weight,gender,height,age,goal) {//calculates da
     return false;
 }
 
-function calculateDailyCalories(gender, weight,height,age){
+function calculateDailyCalories(gender, weight,height,age){ //returns daily calorie intake
     let BMR;
     if(gender=="male"){
         BMR = (10*weight) + (6.25*height) - (5*age) +5;
