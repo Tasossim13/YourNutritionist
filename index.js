@@ -23,7 +23,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-const DbUrl = "mongodb://localhost:27017/YuNuDB"
+const DbUrl = "mongodb://localhost:27017/yourNutritionistDataB"
 
 const app = express()
 mongoose.connect(DbUrl)

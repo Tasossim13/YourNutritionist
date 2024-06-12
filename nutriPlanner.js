@@ -1,10 +1,21 @@
-function storeInput() {
-    const weightChoice = document.getElementById('weight').value; 
-    const usersChoice = document.getElementById('choiceId').value; //contains user's choice (lose weight, gain weight etc)
+async function storeInput() {
+    const weightChoice = document.getElementById('weight').value;
+    const usersChoice = document.getElementById('choiceId').value; // User's goal (lose weight, gain weight, etc.)
     const heightChoice = document.getElementById('height').value;
     const ageChoice = document.getElementById('age').value;
     const genderChoice = document.getElementById('genderId').value;
     const exerciseChoice = document.getElementById('exerciseId').value;
+    const dietChoice = document.getElementById('dietId').value;
+    const mealsChoice = document.getElementById('meals_perId').value;
+    const checkboxes = document.querySelectorAll('.checkbox');
+    const allergyValues = [0, 0, 0, 0];
+    checkboxes.forEach((checkbox) => {
+        const index = parseInt(checkbox.value) - 1;
+        allergyValues[index] = checkbox.checked ? 1 : 0;
+        console.log('Checked values:', allergyValues);
+    });
+
+    console.log('Checked values:', allergyValues);
 
     const userInputElement = document.getElementById('user1');
     let formData = {
@@ -12,49 +23,85 @@ function storeInput() {
         height: heightChoice,
         age: ageChoice,
         choice: usersChoice,
-        gender:genderChoice,
-        exercise: exerciseChoice
-     };
-    userInputElement.innerHTML = `<p>You choose ${formData.weight} and ${formData.choice}</p>`
-    //proteinCalc(formData.weight,formData.choice,formData.exercise);
-    //calculateDailyFatIntake(formData.weight,formData.gender,formData.height,formData.age,formData.choice);
+        gender: genderChoice,
+        exercise: exerciseChoice,
+        diet: dietChoice,
+        meals: mealsChoice,
+        allergies: allergyValues
+    };
+
+    console.log(formData);
+
+    const calories = calculateDailyCalories(formData.gender, formData.weight, formData.height, formData.age);
+    console.log(calories);
+
+    const protein = proteinCalc(formData.weight, formData.choice, formData.exercise);
+    console.log(protein);
+
+    const fat = calculateDailyFatIntake(formData.choice, calories);
+    const carbs = (calories - protein * 4 - fat * 9) / 4;
+    console.log(carbs);
+
+    const recipeCount = parseInt(formData.meals);
+
+    const days = ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'];
+    const allRecipes = {};
+
+    try {
+        for (const day of days) {
+            const response = await fetch('http://localhost:3001/get-recipes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ calories, recipeCount }),
+            });
+            const recipes = await response.json();
+            console.log(`Recipes for ${day}:`, recipes);
+
+            allRecipes[day] = recipes;
+        }
+
+        generateMealPlan(allRecipes, recipeCount);
+
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+    }
+
     return false;
 }
 
 function proteinCalc(weight, choice, exercise){//calculates protein daily intake based on exercise frequency ,or just in weight if exercise is not so often
-    let Choicevalue=weight;
-    let exerciseValue=weight;
+
 
     if(exercise=="sometimes"){
-        exerciseValue= exerciseValue*1.3; 
+        weight= weight; 
     }else if(exercise=="often"){
-        exerciseValue= exerciseValue*1.6; 
+        weight= weight*1.2; 
     }else if(exercise=="everyDay"){
-        exerciseValue= exerciseValue*1.9; 
+        weight= weight*1.6; 
+    }else if(exercise=="rarely"){
+        weight= weight*0.8;
     }
 
     if(choice=="lose"){
-        Choicevalue = Choicevalue*1.4;
+        weight= weight*1.2;
     }else if(choice=="gain"){
-        Choicevalue = Choicevalue*1.8;
+        weight= weight*1.1;
     }else{
-        Choicevalue = Choicevalue*1.1;
+        weight= weight*0.8;
     }
 
-    Choicevalue = parseInt(Choicevalue);
-    exerciseValue = parseInt(exerciseValue);
+    weight = parseInt(weight);
 
-    if(exerciseValue==weight){
-        console.log("you must take "+ parseInt(Choicevalue)+"g of Protein Based on your goal") //returns this in case activity isnt often
-    }else{
-        console.log("you must take "+ parseInt(exerciseValue)+"g of Protein Based on your activity"); // returns this in case the users activity is often
-    }
-    return false;
+    
+    console.log("you must take "+ weight +"g of Protein Based on your goal")
+    return weight;
+    
 }
 
-function calculateDailyFatIntake(weight,gender,height,age,goal) {//calculates daily fat intake based on bmr and all the other values
-    const calories = calculateDailyCalories(gender,weight,height,age);
-    console.log(calories)
+function calculateDailyFatIntake(goal, calories) {//calculates daily fat intake based on bmr and all the other values
+
     let minFat;
     let maxFat;
 
@@ -76,10 +123,10 @@ function calculateDailyFatIntake(weight,gender,height,age,goal) {//calculates da
     const maxFatIntake = (calories * maxFat) / 9;
     const average = ((minFatIntake+maxFatIntake)/2);
     console.log("You must take: "+parseInt(average)+"g of fat daily.");
-    return false;
+    return parseInt(average);
 }
 
-function calculateDailyCalories(gender, weight,height,age){ //returns daily calorie intake
+function calculateDailyCalories(gender, weight,height,age){
     let BMR;
     if(gender=="male"){
         BMR = (10*weight) + (6.25*height) - (5*age) +5;
@@ -87,4 +134,41 @@ function calculateDailyCalories(gender, weight,height,age){ //returns daily calo
         BMR = (10*weight) + (6.25*height) - (5*age) -161;
     }
     return BMR; 
+}
+
+
+function generateMealPlan(allRecipes, recipeCount) {
+    const table = document.getElementById('meal-plan');
+    const days = ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'];
+
+    // Clear existing table content
+    table.innerHTML = '';
+
+    // Create table header
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    days.forEach(day => {
+        const th = document.createElement('th');
+        th.textContent = day;
+        headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    const tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+
+    // Populate the table with recipes
+    for (let rowIndex = 0; rowIndex < recipeCount; rowIndex++) {
+        const tr = document.createElement('tr');
+        days.forEach(day => {
+            const td = document.createElement('td');
+            const recipes = allRecipes[day];
+            const recipeIndex = rowIndex % recipes.length;
+            td.textContent = recipes[recipeIndex].name;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    }
 }
