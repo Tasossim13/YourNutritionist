@@ -21,18 +21,18 @@ Download Files
  Website includes 5 main pages.
  *Landing Page* has links to every available webpage. **Functional**
 
- *Smart Nutri-planner* receives data from user and creates a week long diet plan. **nutriPlanner.js** calculates the calories and macros (protein, fat, carbohydrates) the user is 
+ **Smart Nutri-planner** receives data from user and creates a week long diet plan. **nutriPlanner.js** calculates the calories and macros (protein, fat, carbohydrates) the user is 
     determined to need from the information provided. **nutriPlanner.js** sends calorie data and calls the **server1.js** function post get-recipes.
     Each day is generated separetely from the rest. The planner splits the calorie requirement to 3 or 4 random numbers(depending on user choice) 
     and tries to find recipes whose calorie count is 50+- close to each number and returns an array of recipes for each day. Recipes are then placed dynamically into a table via generateMealPlan function.
     **Semi-Functional** 
 
- *Suggested Recipes* Recipes with user selected ingredients appear at the bottom of the site. Currently script runs without user inputs when site is loaded and 5 recipes from database are returned with
+ **Suggested Recipes** Recipes with user selected ingredients appear at the bottom of the site. Currently script runs without user inputs when site is loaded and 5 recipes from database are returned with
     basic information. **Non-Functional**
 
- *Calculate Calories* receives data from user and **calculate.js** creates a calorie target for the user based of Miflin-St.Jeor methodology **Functional**
+ **Calculate Calories** receives data from user and **calculate.js** creates a calorie target for the user based of Miflin-St.Jeor methodology **Functional**
 
- *Sign in/Register* has form for data input. **Non-Functional**
+ **Sign in/Register** has form for data input. **Non-Functional**
 
 **Notable information**
  Data was created by scraping allrecipes.com for recipe information that included basic nutrtitional values. 
