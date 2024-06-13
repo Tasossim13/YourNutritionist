@@ -7,7 +7,7 @@ expectations and requirements. Utilizing this information, the platform creates
 meal plans tailored for the user. These meal plans include a variety of recipes and food options. It helps people 
 who trying to build muscle, lose weight or just eat healthy. 
 
-**Usage:**
+<h1>Usage:</h1>
 Download Files
  1. *For server:* Intall node.js from https://nodejs.org/en. Run "node server1.js" in terminal of choice. VSCode and nodemon was used during development.
  2. *For Database:* Download and install MongoDBCompass, following instructions from https://www.mongodb.com/products/tools/compass
