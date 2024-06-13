@@ -32,7 +32,7 @@ Download Files
 
  *Calculate Calories* receives data from user and **calculate.js** creates a calorie target for the user based of Miflin-St.Jeor methodology **Functional**
 
- *Sign in/Regiser* has form for data input. **Non-Functional**
+ *Sign in/Register* has form for data input. **Non-Functional**
 
 **Notable information**
  Data was created by scraping allrecipes.com for recipe information that included basic nutrtitional values. 
