@@ -7,7 +7,7 @@ expectations and requirements. Utilizing this information, the platform creates
 meal plans tailored for the user. These meal plans include a variety of recipes and food options. It helps people 
 who trying to build muscle, lose weight or just eat healthy. 
 
-<h1>Usage:</h1>
+<h3>Usage:</h3>
 Download Files
  1. *For server:* Intall node.js from https://nodejs.org/en. Run "node server1.js" in terminal of choice. VSCode and nodemon was used during development.
  2. *For Database:* Download and install MongoDBCompass, following instructions from https://www.mongodb.com/products/tools/compass
@@ -17,7 +17,7 @@ Download Files
 
 
 
-**Features:**
+<h3>Features:</h3>
  Website includes 5 main pages.
  *Landing Page* has links to every available webpage. **Functional**
 
@@ -34,7 +34,7 @@ Download Files
 
  **Sign in/Register** has form for data input. **Non-Functional**
 
-**Notable information**
+<h3>Notable information</h3>
  Data was created by scraping allrecipes.com for recipe information that included basic nutrtitional values. 
  Data was then cleaned and transformed to useable form. Using the Food Data Central Foundations Food Database(https://fdc.nal.usda.gov/fdc-app.html#/food-search?type=Foundation&query=) 
  more detailed information about the nutritional value of the recipes, allergens and diet types was added to the data.
