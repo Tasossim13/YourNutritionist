@@ -12,8 +12,8 @@ After Downloading Files
 <br>
   <h3>For server:</h3> Intall node.js from https://nodejs.org/en. Run "node server1.js" in terminal of choice. VSCode and nodemon was used during development.
   <h3>For Database:</h3> Download and install MongoDBCompass, following instructions from https://www.mongodb.com/products/tools/compass
-                  Create database with Database name "yourNutritionistDataB" and Collection name "recipes", following instructions from https://www.mongodb.com/docs/compass/current/databases/
-                  Unzip Recipes_Final_tagged. Press Add_Data inside "yourNutritionistDataB" and import csv file found inside zip file.
+                         Create database with Database name "yourNutritionistDataB" and Collection name "recipes", following instructions from https://www.mongodb.com/docs/compass/current/databases/
+                         Unzip Recipes_Final_tagged. Press Add_Data inside "yourNutritionistDataB" and import csv file found inside zip file.
   <h3>For Website:</h3>  Open index.html on your browser
 
 
