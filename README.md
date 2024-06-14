@@ -9,7 +9,7 @@ who trying to build muscle, lose weight or just eat healthy.
 
 <h2>Usage:</h2>
 After Downloading Files
-<br>
+</br>
   <h3>For server:</h3> Intall node.js from https://nodejs.org/en. Run "node server1.js" in terminal of choice. VSCode and nodemon was used during development.
   <h3>For Database:</h3> Download and install MongoDBCompass, following instructions from https://www.mongodb.com/products/tools/compass <br/>
                          Create database with Database name "yourNutritionistDataB" and Collection name "recipes", following instructions from https://www.mongodb.com/docs/compass/current/databases/ <br/>
