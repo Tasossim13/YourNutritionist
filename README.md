@@ -8,7 +8,8 @@ meal plans tailored for the user. These meal plans include a variety of recipes 
 who trying to build muscle, lose weight or just eat healthy. 
 
 <h2>Usage:</h2>
-Download Files
+After Downloading Files
+<br>
  1. *For server:* Intall node.js from https://nodejs.org/en. Run "node server1.js" in terminal of choice. VSCode and nodemon was used during development.
  2. *For Database:* Download and install MongoDBCompass, following instructions from https://www.mongodb.com/products/tools/compass
                   Create database with Database name "yourNutritionistDataB" and Collection name "recipes", following instructions from https://www.mongodb.com/docs/compass/current/databases/
